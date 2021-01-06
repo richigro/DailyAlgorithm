@@ -6,7 +6,7 @@ const selectionSort = function(array) {
   for(let i = 0; i < array.length; i++){
     let idxOfSmallest = i;
     for(let j = i + 1; j < array.length; j++){
-      console.log(i,j);
+      // console.log(i,j);
       if(array[j] < array[idxOfSmallest]){
         //make the new smallest the new index
         idxOfSmallest = j;
