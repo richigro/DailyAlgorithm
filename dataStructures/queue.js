@@ -1,33 +1,39 @@
 //implementing a simple queue(not priority queu)
 //implemented with linked list for better performance
 //when dequeing O(1) and enqueing O(1)
-//This is written with JavasScipt's functional pattern
+//This is written with JavasScipt's functional-shared pattern
 
 var Node = function(val, next=null) {
-  this.value = val;
-  this.next = next;
+  var someInstance = {};
+  someInstance.value = val;
+  someInstance.next = next;
+
+  return someInstance;
 };
 
 var Queue = function() {
+  var someInstance = {};
+  someInstance.head = null;
+  someInstance.tail = null;
+  someInstance.sizeOfQueue = 0;
 
-  this.head = null;
-  this.tail = null;
-  this.size = 0;
+  //add shared methods
+  someInstance.enqueue = Queue.methods.enqueue;
+  someInstance.dequeue = Queue.methods.dequeue;
+  someInstance.size = Queue.methods.size;
+  
+  return someInstance;
+};
 
-  // this will duplicate methods in memory for 
-  // each instance of a Queue, but that is how this 
-  // functional pattern works, later I will implement 
-  // this Queue with a functional-shared pattern that 
-  // addresses this specific problem of duplicating methods 
-  // in memory
-
-  //Time complexity O(1)
-  this.enqueue = function(value){
+Queue.methods = {
+  //Time O(1)
+  enqueue: function(value){
     // Create a new node
-    var newNode = new Node(value);
+    var newNode = Node(value);
+    // console.log(newNode);
     // if queue is empty 
     //point head nad tail to new node
-    if(!this.size){
+    if(!this.sizeOfQueue){
       this.head = newNode;
       this.tail = newNode;
     } else {
@@ -39,18 +45,16 @@ var Queue = function() {
       //by pointing last node to new node
       //creates the pointer from the previos tail 
       // to this new tail
-     
     }
-
-    this.size++;
-  };
-
-  //Time complexity O(1)
-  this.dequeue = function(){
+    //increment the size
+    this.sizeOfQueue++;
+  },
+  //Time O(1)
+  dequeue: function(){
     //keep tarck of the old head
     var oldHead = this.head;
     //if the queue is empty return undefined
-    if(!this.size){
+    if(!this.sizeOfQueue){
       console.log("The Queue is already empty!");
       return undefined;
     } else {
@@ -60,22 +64,24 @@ var Queue = function() {
       this.head = oldHead.next;
     }
     //decrement the size of the queue
-    this.size--;
+    this.sizeOfQueue--;
     //return the value from the removed node
     return oldHead.value;
-  };
-  // Time complexity O(1)
-  // this.size = function(){
-  //   return this.size;
-  // };
-
+  },
+  size: function(){
+    return this.sizeOfQueue;
+  }
 };
 
-var myQueue = new Queue();
-// var newNode = new Node(5);
-myQueue.enqueue(1);
-myQueue.enqueue(2);
-myQueue.enqueue(3);
-console.log(myQueue);
-console.log("Should return the head: ", myQueue.dequeue());
-console.log(myQueue);
+// var myQueue = Queue();
+// console.log("empty: ",myQueue);
+// myQueue.enqueue(1);
+// myQueue.enqueue(2);
+// myQueue.enqueue(3);
+// console.log("3 nodes", myQueue);
+// console.log(myQueue.dequeue());
+// console.log("1st dequeue ",myQueue);
+
+// export this Queue class to be used in another 
+//JavaScript file
+module.exports = { Queue };
