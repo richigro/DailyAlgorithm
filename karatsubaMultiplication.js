@@ -36,6 +36,20 @@ const karatsubaMultiplication = function(x, y){
   // return (Math.pow(10, n) * ac + Math.pow(10, n/2) * adbc + bd);
 };
 
-console.log("result: ", karatsubaMultiplication(5678, 1234));
+function recursiveAdd(x,y){
+  let sum = 0;
+  let i = y;
+  if(i === 0){
+    return sum;
+  }
+  //add
+  sum += x;
+  i--;
+  return recursiveAdd(x, i);
+};
+
+recursiveAdd(5,3);
+
+// console.log("result: ", karatsubaMultiplication(5678, 1234));
 var five = 5;
 console.log(five.toString());
