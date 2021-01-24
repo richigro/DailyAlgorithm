@@ -1,6 +1,7 @@
 
 function matrixMultiplication(x, y) {
   var z = [];
+  var y = [];
 
 };
 
