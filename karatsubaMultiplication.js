@@ -3,7 +3,7 @@
 // number of size n
 const karatsubaMultiplication = function(x, y){
   var n = x.toString().length;//4//2//1 | 2
-  console.log("n: ", n);
+  // console.log("n: ", n);
   var nOfTwo = y.toString().length;//4//2//1 | 2
   if(n === 1 && nOfTwo === 1) {
     //compute the result in one step
@@ -54,6 +54,7 @@ var numOne = 3141592653589793238462643383279502884197169399375105820974944592;
 var numTwo = 2718281828459045235360287471352662497757247093699959574966967627;
 
 console.log(karatsubaMultiplication(5678, 1234));
+karatsubaMultiplication(5678,1234);
 // console.log(numOne * numTwo);
 // var five = 5;
 // console.log(five.toString());
