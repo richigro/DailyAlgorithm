@@ -33,3 +33,4 @@ const quickSort = function(arr) {
 
 console.log(quickSort([4,6,1,9,2,9]));
 // console.log(quickSort([2, 1]));
+//quicksort
