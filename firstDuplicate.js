@@ -10,3 +10,4 @@ function firstDuplicate(a) {
     }
     return -1;
   }
+  //test
