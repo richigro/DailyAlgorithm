@@ -40,25 +40,29 @@
 // };
 
 //completed with basic dynamic programming
+// this solution O(n) time and O(n) space
 var climbStairs = function(n) {
-  // var obj = {};
     
    var countSteps = function(steps, obj){
        //base case
        if(steps < 0){
           return 0;
        } 
-
+       //base case
        if(steps === 0){
            return 1;
        }
-       //if already calculated return the previous result 
+       //if already calculated 
+       //lookup the stored result
        if(obj[steps]){
           return obj[steps];
         }
        
-        // calculate a never before seen case
-        obj[steps] = countSteps(steps - 1, obj) + countSteps(n - 2, obj);
+        //If we haven't seen this problem 
+        // solve it
+        //  then store it in the obj
+        obj[steps] = countSteps(steps - 1, obj) + countSteps(steps - 2, obj);
+        // after storing return the result
         return obj[steps];
    };
     
