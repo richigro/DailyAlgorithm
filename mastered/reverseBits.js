@@ -17,3 +17,28 @@ var reverseBits = function(n) {
   return parseInt(reversedBit.join(""), 2);
   
 };
+
+
+//Done with bit manipulation
+/*
+  for refenrence see the folowing video:
+  great explanation
+  https://www.youtube.com/watch?v=KE5Axm7uzok&ab_channel=NideeshTerapalli
+*/
+var reverseBits = function(n) {
+  let begin = n;
+  // let binaryInput = n.toString(2);
+  console.log("og number: ",n);
+  let str = '';
+  for(let i = 0; i < 32; i++){
+      str += n & 1;
+     n =  n >> 1;
+  }
+  console.log("a: ", begin.toString(2));
+  console.log(parseInt(str,2));
+  return parseInt(str,2);
+//     for(let i = 1; i < 32; i++){
+      
+//     }
+//     return answer;
+};
