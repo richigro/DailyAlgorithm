@@ -31,3 +31,22 @@ var hasCycle = function(head) {
   traverse(head);
   return hasCycle;
 };
+
+//solve using a fast pointer and a slow pointer
+// each pointer eventually cathces up to each other
+// only if there is a cycle this is 
+//O(n) runtime and O(1) space
+var hasCycle = function(head) {
+  let fastPointer = head;
+  let slowPointer = head;
+    
+  while(fastPointer !== null && fastPointer.next !== null){
+    fastPointer = fastPointer.next.next;
+    slowPointer = slowPointer.next;
+    //check to see if they match
+    if(slowPointer === fastPointer){
+     return true;  
+    }
+  }
+    return false;
+};
