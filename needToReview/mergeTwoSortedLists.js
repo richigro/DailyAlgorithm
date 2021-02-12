@@ -19,3 +19,4 @@ var mergeTwoLists = function(l1, l2) {
   
   return head.next;
 };
+// this algorithm run on O(n) Time and O(1) space
