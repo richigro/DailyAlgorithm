@@ -2,4 +2,4 @@
 
 ##Todo 
 Practice markdown 
-#use think mages and gifs 
+#use think images and gifs 
