@@ -1,3 +1,4 @@
+// solve this without extra space 
 var containsDuplicate = function(nums) {
   let storage = {};
   
