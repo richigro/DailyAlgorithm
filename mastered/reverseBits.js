@@ -20,6 +20,7 @@ var reverseBits = function(n) {
 
 
 //Done with bit manipulation
+//bit manupulation tecnique
 /*
   for refenrence see the folowing video:
   great explanation
