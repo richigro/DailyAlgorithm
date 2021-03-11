@@ -1,5 +1,5 @@
 // done with two pointers
-
+// start 
 var maxProfit = function(prices) {
   let highestProfit = 0;
   let left = 0; 

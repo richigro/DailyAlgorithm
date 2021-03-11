@@ -41,6 +41,7 @@
 
 //completed with basic dynamic programming
 // this solution O(n) time and O(n) space
+//basically Fibonacci 
 var climbStairs = function(n) {
     
    var countSteps = function(steps, obj){

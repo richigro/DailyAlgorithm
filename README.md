@@ -1,4 +1,5 @@
 # DailyAlgorithm
 
-Todo 
+##Todo 
 Practice markdown 
+#use think images and gifs 
