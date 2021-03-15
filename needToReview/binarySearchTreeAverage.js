@@ -5,6 +5,8 @@
  *     this.left = (left===undefined ? null : left)
  *     this.right = (right===undefined ? null : right)
  * }
+
+Breadth first search 
  */
 /**
  * @param {TreeNode} root
