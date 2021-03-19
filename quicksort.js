@@ -6,6 +6,7 @@ const quickSort = function(arr) {
   //a randomly chosen pivot results in less collision and a better chance of having an algorithm that results
   // in O(n * log n) average case, if the randomly chosen pivot is near the end or begining 
   // the algoritm's worst case is O(n^ 2)
+  // next pick a randomized pivot point 
   let pivot = arr[Math.floor(arr.length / 2)];
   let pivotIndex = Math.floor(arr.length / 2);  
   let left = [];
