@@ -34,6 +34,7 @@ var reverseList = function(head) {
   null  <- 1  <-  2
 
   return prev
+  This actually works 
 */
 
 var reverseList = function(head) {
