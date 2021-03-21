@@ -1,3 +1,4 @@
+//BFS
 // Import the class Queue
 var {Queue} = require('./queue.js');
 
